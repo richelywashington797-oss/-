@@ -1,0 +1,320 @@
+<!doctype html><html lang="zh-CN" data-edition="offline-first"><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>美术分享 · 分享目录</title><style>
+*{box-sizing:border-box}body{margin:0;background:#f6f4ed;color:#242722;font:16px "Microsoft YaHei",sans-serif}header,main{max-width:1120px;margin:auto;padding:24px}header{display:flex;align-items:center;gap:12px;border-bottom:1px solid #cbcabe;font-weight:bold}i{background:#252a24;color:#d0ed78;border-radius:9px;padding:7px;font-style:normal}small{font:12px monospace;letter-spacing:2px;color:#64695e}header small{margin-left:auto}.hero{background:#dce8bb;border-radius:20px;position:relative;overflow:hidden;padding:44px;margin:12px 0 38px}.art{position:absolute;right:7%;top:24%;width:24%;height:56%;background:repeating-linear-gradient(160deg,#303b2b 0 3px,#b5cb90 4px 10px);transform:skewY(-12deg);box-shadow:8px 9px #dee9bd,10px 11px #303b2b,18px 20px #dee9bd,20px 22px #303b2b;border-radius:8px}h1{font-size:clamp(32px,5vw,64px);margin:12px 0}button,input,textarea{font:inherit}button{cursor:pointer;border:1px solid #c7cabd;border-radius:8px;padding:9px 15px;background:#fffdf6;color:inherit}button:hover{background:#e9efd9}.dark{background:#273127;color:white}.dark:hover{background:#495440}.bar,.row,nav{display:flex;gap:12px;align-items:center}.bar{justify-content:space-between;flex-wrap:wrap}.row{background:#fffdf7;border-top:1px solid #d6d7ca;padding:20px;transition:background .2s}.row:hover{background:#eff3e6}.row b{flex:1}.row span{color:#64705c}.link{background:none;border:0;text-align:left;font-weight:bold}.list{border:1px solid #d6d7ca;border-radius:12px;overflow:hidden}.caption{background:#ebece2;padding:12px 20px}input,textarea{border:1px solid #c5c9ba;padding:10px;border-radius:7px;background:#fffdf9}dialog{width:min(480px,92vw);border:0;border-radius:15px;padding:28px}dialog::backdrop{background:#17201688}label{display:grid;gap:5px;margin:14px 0}iframe{background:white;width:100%;height:80vh;border:0;border-radius:12px}nav{margin-bottom:14px}nav b{flex:1}[hidden]{display:none!important}@media(max-width:600px){.hero{padding:24px}.art{opacity:.25;right:-8%}.row{padding:10px;gap:4px}.row span{display:none}main{padding:14px}}
+#viewer{position:fixed;inset:0;margin:0;padding:0;border:0;border-radius:0;width:100vw;height:100dvh;max-width:none;max-height:none;background:#191b19;color:white}#viewer section{width:100%;height:100%;display:grid;place-items:center}#viewer :is(img,video,object,iframe){display:block;width:100%;height:100%;object-fit:contain;border:0}#viewer button,#viewer a{position:absolute;right:16px;top:12px;background:#252b25;color:white;border-radius:20px;padding:8px 16px}#viewer a{right:132px}#viewer pre{white-space:pre-wrap;overflow:auto;width:100%;height:100%;padding:20px}#viewer .picture-area{position:absolute;inset:0;overflow:auto;display:flex}#viewer .picture-area img{height:auto;width:auto;max-width:none;flex:none;margin:auto;align-self:flex-start}#viewer .picture-tools{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:6px;background:#252b25;color:white;padding:5px;border-radius:24px;white-space:nowrap}#viewer .picture-tools button{position:static;padding:6px 12px}#viewer .picture-tools output{min-width:4ch;text-align:center}body{background:radial-gradient(ellipse at 14% 12%,#dbeafa,transparent 54%),radial-gradient(ellipse at 88% 36%,#e0dcfa,transparent 48%),linear-gradient(135deg,#edf5f6,#e8edf5);min-height:100vh;color:#172b40}
+header{border-color:#ffffffaa}.hero,.list,dialog:not(#viewer){background:linear-gradient(124deg,#ffffffba,#ffffff58);border:1px solid #ffffffcf;box-shadow:inset 0 1px 1px white,0 18px 50px #445c7d16;backdrop-filter:blur(24px)}
+.hero{border-radius:32px}.art{border-radius:20px;transform:rotate(-13deg) skewY(-6deg);background:linear-gradient(135deg,#ffffffd9,#9cc5e793 42%,#b6a5f6a6);border:1px solid white;box-shadow:8px 12px 0 #d9ecff,9px 13px 0 #fff,18px 24px 0 #c1c9e8,19px 25px 0 white,22px 34px 32px #64759644}
+.list{border-radius:20px}.row{background:#ffffff45;border-color:#ffffffad}.row:hover{background:#ffffffa8}.caption{background:#ffffff42}.row small{display:block;font:12px sans-serif;color:#566a7c;margin:4px 0 0 15px;letter-spacing:0}.row b{min-width:0;overflow-wrap:anywhere}.row .link{color:#19334b}.row .remove{color:#a33d49}button,input,select{border:1px solid #aebfce88;border-radius:14px;background:#ffffffa8}select{padding:10px;font:inherit}.dark,i{background:#284963;color:white}#backFolder{margin:0 0 10px}.bar>div{display:flex;gap:6px;flex-wrap:wrap}.bar{margin-bottom:12px}button:active{transform:scale(.96)}dialog[open]{animation:jelly .34s both}dialog.closing{animation:fold .17s both}@keyframes jelly{0%{opacity:0;transform:scale(.94)}70%{transform:scale(1.012)}100%{opacity:1;transform:none}}@keyframes fold{to{opacity:0;transform:scale(.96)}}@media(prefers-reduced-motion:reduce){dialog[open],dialog.closing{animation:none}}
+:root{--duck:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCAzMiIgc2hhcGUtcmVuZGVyaW5nPSJjcmlzcEVkZ2VzIj48cGF0aCBmaWxsPSIjMTkxODE5IiBkPSJNNSAyNVYxNGgzVjloNFY0aDRWMmg0djRoNnYzaDR2NGgydjVoNHYyaDR2NkgyN3YzSDExdi0ySDd2LTJ6Ii8+PHBhdGggZmlsbD0iI2ZmZjZkZCIgZD0iTTggMjR2LTloM3YtNWg0VjdoMlY1aDF2NGg3djJoM3Y0aDJ2N2gtNXY1SDEydi0yeiIvPjxwYXRoIGZpbGw9IiNkYmQzYmMiIGQ9Ik04IDIxaDN2M2g2djJoOHYxSDEydi0ySDh6Ii8+PHBhdGggZmlsbD0iIzI4MjQyNyIgZD0iTTE2IDE1aDJ2M2gtMnptMTAtMWgydjNoLTJ6Ii8+PHBhdGggZmlsbD0iI2Y2OTA4MiIgZD0iTTEyIDE5aDR2MmgtNHptMTYtMWgzdjJoLTN6Ii8+PHBhdGggZmlsbD0iI2ZmYTgyNSIgZD0iTTI0IDE5aDV2MWg2djJoM3YySDI0di0xaC0zdi0yaDN6Ii8+PC9zdmc+)}body{color:#f4f1e9;background:radial-gradient(ellipse at 80% 12%,#534937,transparent 47%),linear-gradient(130deg,#212324,#151718);color-scheme:dark}body:before{content:"";position:fixed;inset:-50px;pointer-events:none;background-image:var(--duck);background-size:120px 100px;opacity:.035;transform:rotate(-9deg);z-index:-1}header{border-color:#ffffff20}header i,i,.dark{color:#2c271c;background:#ffc470}small,.row small,.row span{color:#c9c4b9}.hero,.list,dialog:not(#viewer){background:linear-gradient(125deg,#393938ef,#292a29ee);border:1px solid #ffffff22;box-shadow:inset 0 1px #ffffff12,0 14px 42px #0003;color:#f4f1e9}.hero{background:radial-gradient(ellipse at 84% 75%,#76614266,transparent 40%),linear-gradient(125deg,#3f403e,#2d2d2c)}.hero p{max-width:66%;line-height:1.65}button,input,select,textarea{background:#424240;color:#fff;border-color:#ffffff26}button:hover{background:#51504b}.dark:hover{background:#ffda95}.caption{background:#ffffff06}.row{background:transparent;border-color:#ffffff12;cursor:pointer;transition:background .2s,transform .2s}.row:hover{background:#ffffff0e;transform:translateY(-1px)}.row .link{color:#fffcf5}.row .remove{color:#ffb3aa}.mascot{display:inline-block;width:44px;height:44px;flex:none;border-radius:12px;background:var(--duck) center/85% no-repeat,#695333;image-rendering:pixelated}.row:hover .mascot{animation:bob 1.3s ease-in-out infinite}#pond{position:absolute;right:8%;top:12%;width:24%;height:78%;background:transparent;border:0}#pond .mascot{position:absolute;inset:0;width:100%;height:100%;background:var(--duck) center/contain no-repeat;animation:bob 3.6s ease-in-out infinite}.ripple{position:absolute;bottom:1%;left:10%;width:80%;height:18%;border:2px solid #ffc97666;border-radius:50%;animation:wave 3.6s ease-out infinite}@keyframes bob{50%{transform:translateY(-7px) rotate(-3deg)}}@keyframes wave{0%{transform:scale(.65);opacity:.7}100%{transform:scale(1.15);opacity:0}}dialog:not(#viewer){position:fixed;inset:0;margin:auto;border-radius:23px}dialog:not(#viewer)::backdrop{background:#10121185;backdrop-filter:blur(9px)}dialog footer{text-align:right;margin-top:24px}input:focus-visible,button:focus-visible{outline:2px solid #ffce81;outline-offset:3px}@media(prefers-reduced-motion:reduce){#pond .mascot,.ripple,.row:hover .mascot{animation:none}}.author-field{position:relative}.author-field input{width:100%;padding-left:42px}.duck-name,.author-name:before{width:24px;height:24px;background:var(--duck) center/contain no-repeat;image-rendering:pixelated}.duck-name{position:absolute;left:10px;top:50%;transform:translateY(-50%);pointer-events:none}.author-name:before{content:"";display:inline-block;vertical-align:middle;margin-right:6px}.author-field{border-radius:14px;background:#424240;border:1px solid #ffffff26;overflow:hidden}.author-field:focus-within{outline:2px solid #ffce81;outline-offset:2px}.author-field input{border:0;background:transparent;padding-right:45px;height:42px;outline:none}.author-field .duck-name{top:21px}#authorToggle{position:absolute;right:0;top:0;height:42px;width:42px;padding:0;border:0;background:transparent;color:#ffd198;font-size:20px;transition:transform .18s}#authorToggle[aria-expanded=true]{transform:rotate(180deg)}#authorPanel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .22s ease}#authorPanel.expanded{grid-template-rows:1fr}#authorNames{min-height:0;max-height:180px;overflow:hidden}#authorPanel.expanded #authorNames{overflow-y:auto;border-top:1px solid #ffffff20}#authorNames button{display:block;width:100%;text-align:left;padding:8px 15px;border:0;border-radius:0;background:transparent;color:#f6f2ea}#authorNames button:hover,#authorNames button:focus-visible{background:#ffffff12;color:#ffd198}@media(prefers-reduced-motion:reduce){#authorPanel,#authorToggle{transition:none}}.folder-field{border:1px solid #ffffff26;border-radius:14px;overflow:hidden;background:#424240}.folder-field button{width:100%;text-align:left;border:0;border-radius:0;background:transparent}.folder-field button:hover{background:#ffffff12}#folderToggle:after{content:"⌄";float:right;color:#ffd198;transition:transform .2s}#folderToggle[aria-expanded=true]:after{transform:rotate(180deg)}#folderPanel{display:grid;grid-template-rows:1fr;transition:grid-template-rows .22s ease}#folderPanel[inert]{grid-template-rows:0fr}#folderOptions{min-height:0;max-height:180px;overflow-y:auto}#folderPanel[inert] #folderOptions{overflow:hidden}#deleteYes{background:#ffc470;color:#29231c}#deleteText{overflow-wrap:anywhere;line-height:1.6}@media(prefers-reduced-motion:reduce){#folderPanel{transition:none}}body:before{display:none}body{isolation:isolate}#duckWater{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}#brandDuck{width:44px;height:44px;flex:none;display:grid;place-items:center;padding:4px;border:1px solid #ffdd9c66;border-radius:13px;background:linear-gradient(145deg,#ffcf87,#e6a550);box-shadow:inset 0 1px #fff6}#brandDuck svg{width:34px;height:34px;image-rendering:pixelated}#brandDuck [data-face]{display:none}#brandDuck [data-face].visible{display:inline}.author-name:before{display:none}.duck-name{background:none}.author-duck{width:26px;height:26px;vertical-align:middle;margin-right:9px;image-rendering:pixelated}.duck-name .author-duck{margin:0;width:24px;height:24px}#brandDuck{display:inline-grid}</style><style>
+.pixel-label{display:inline-flex;align-items:baseline;white-space:nowrap}
+.pixel-label span{display:inline-block}
+@media(prefers-reduced-motion:no-preference){
+ .pixel-label.play span{animation:glyph-pop 340ms steps(2,end) both}
+ .pixel-label.play span:nth-child(2){animation-delay:45ms}
+ .pixel-label.play span:nth-child(3){animation-delay:90ms}
+ .pixel-label.play span:nth-child(4){animation-delay:135ms}
+ @keyframes glyph-pop{
+  0%{opacity:0;transform:translateY(6px);clip-path:inset(100% 0 0)}
+  32%{opacity:1;transform:translateY(-3px);clip-path:inset(0)}
+  58%{transform:translateY(2px)}
+  80%{transform:translateY(-1px)}
+  100%{opacity:1;transform:translateY(0);clip-path:inset(0)}
+ }
+}
+</style><style>
+.file-field .duck-pick{position:relative;display:flex;align-items:center;gap:12px;min-height:56px;padding:5px 12px 5px 5px;border:1px solid #ffffff26;border-radius:17px;background:#393a38;overflow:hidden}
+.duck-pick-button{position:relative;isolation:isolate;overflow:hidden;flex:none;display:flex;align-items:center;gap:6px;padding:6px 14px 6px 7px;min-height:44px;border-radius:12px;color:#342516;font-weight:700;background:linear-gradient(115deg,#ffda91,#ffb852);box-shadow:inset 0 1px 0 #fff9;transition:filter .16s,transform .16s}
+.duck-pick-button:before{content:"";width:33px;height:32px;background:var(--duck) center/contain no-repeat;image-rendering:pixelated}
+.duck-pick-button:after{content:"";position:absolute;inset:-5px;z-index:-1;background:var(--duck) 5px 3px/26px 22px repeat;opacity:.13;transform:rotate(-12deg);image-rendering:pixelated}
+#pickName{min-width:0;overflow-wrap:anywhere;color:#ebe4d7;font-size:14px}
+.duck-pick input[type=file]{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;padding:0}
+.duck-pick:hover .duck-pick-button{filter:brightness(1.07)}.duck-pick:active .duck-pick-button{transform:scale(.97)}.duck-pick:focus-within{outline:2px solid #ffce81;outline-offset:2px}
+</style><style id="floating-panels">
+#catalog :is(.hero,.list){
+ position:relative;isolation:isolate;
+ background:linear-gradient(125deg,rgba(77,77,76,.53),rgba(35,35,35,.46));
+ backdrop-filter:blur(9px) saturate(.85);-webkit-backdrop-filter:blur(9px) saturate(.85);
+ border-color:rgba(233,237,234,.13);
+ box-shadow:inset 0 1px 1px #ffffff27,inset 0 -1px 1px #ffffff0d,0 0 10px #ffffff08,0 12px 35px #0003;
+ animation:panel-drift 8s ease-in-out infinite;
+}
+#catalog .list{animation-duration:10s;animation-delay:-3s}
+#catalog :is(.hero,.list)::after{
+ content:"";pointer-events:none;position:absolute;inset:0;z-index:1;border-radius:inherit;padding:1px;
+ background:linear-gradient(118deg,#ffffff73 0%,#ffffff12 22%,#ffffff05 45%,#ffffff38 72%,#ffffff12 94%);
+ mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;
+}
+#catalog .list:focus-within,#catalog .list:hover{animation-play-state:paused}
+@keyframes panel-drift{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@media(prefers-reduced-motion:reduce){#catalog :is(.hero,.list){animation:none}}
+#brandDuck{width:44px;height:44px;flex:none;display:grid;place-items:center;padding:4px;border:1px solid #ffdd9c66;border-radius:13px;background:linear-gradient(145deg,#ffcf87,#e6a550);box-shadow:inset 0 1px #fff6}#brandDuck svg{width:34px;height:34px;image-rendering:pixelated}#brandDuck [data-face]{display:none}#brandDuck [data-face].visible{display:inline}</style><header><span id="brandDuck" role="img" aria-label="小鸭：开心"><svg viewBox="0 0 32 32" aria-hidden="true" shape-rendering="crispEdges"><path fill="#282322" d="M4 25V12h3V8h4V4h4V2h4v5h5v3h3v5h2v7h2v5h-7v3H10v-2H6v-3z"/><path fill="#fff4dc" d="M6 24V13h3V9h5V6h2V4h1v5h6v3h2v4h2v7h-4v5H11v-2H8v-2z"/><path fill="#fec243" d="M18 20h6v1h4v2h2v2H19v-1h-3v-2h2z"/><path fill="#e18b2e" d="M19 24h11v1H19z"/><path fill="#f39586" d="M8 20h4v2H8zm16-2h2v2h-2z"/><g fill="#312728"><g data-face="开心"><path d="M10 17v-3h2v-2h2v2h2v3h-2v-2h-2v2zm10-1v-3h2v-2h2v2h1v2h-2v-2h-1v3z"/></g><g data-face="生气"><path d="M9 12h3v2h3v2h2v2h-4v-3H9zm11 3h2v-2h3v-2h2v4h-3v3h-4z"/><path fill="#e77658" d="M3 5h2v2h2v2H4V7H2zm5-3h2v3H8z"/></g><g data-face="沮丧"><path d="M9 17v-2h3v-2h4v2h-3v2zm11-4h3v2h3v2h-3v-2h-3z"/><path fill="#a6a3ac" d="M10 18h4v1h-4zm11 0h3v1h-3z"/></g><g data-face="流泪"><path d="M9 15h6v3h-5zm11-1h5v3h-5z"/><path fill="#70c5eb" d="M11 18h3v5h-1v2h-3v-4h1zm11-1h2v4h-2z"/></g></g></svg></span> 美术分享 <small>FOLIO / LIBRARY</small></header><main id="catalog"><section class="hero"><small>SHARING ARCHIVE</small><h1>分享目录</h1><p>云端共享 · 在同一份目录里一起整理作品。</p><button type="button" id="pond" aria-label="让小鸭跳一下"><span class="ripple"></span><span class="mascot"></span></button></section><div class="bar"><h2>全部分享 <small id="count"></small></h2><div><button id="newFolder">＋ 文件夹</button> <small id="syncState" role="status">连接中…</small> <input id="query" type="search" placeholder="搜索标题或分享者" aria-label="搜索"><button class="dark" id="add">＋ 添加作品</button></div></div><button id="backFolder" hidden>‹ 返回分享目录</button><div class="list"><div class="caption"><small>INDEX　/　分享条目</small></div><div id="rows"></div></div></main><dialog id="deleteModal" aria-labelledby="deleteHeading" aria-describedby="deleteText"><div class="mascot" aria-hidden="true"></div><h2 id="deleteHeading"></h2><p id="deleteText"></p><footer><button autofocus onclick="deleteModal.close()">取消</button> <button id="deleteYes">确认删除</button></footer></dialog><dialog id="folderModal" aria-labelledby="folderHeading"><form id="folderForm"><div class="mascot" aria-hidden="true"></div><h2 id="folderHeading">新建文件夹</h2><label>文件夹名称<input id="folderName" required autofocus autocomplete="off"></label><footer><button type="button" onclick="folderModal.close()">取消</button> <button class="dark">保存</button></footer></form></dialog><dialog id="dlg"><form id="form"><h2 id="dt"></h2><label>分享标题<input id="titleBox" required></label><label for="author">分享者（选填）</label><div class="author-field"><span class="duck-name" aria-hidden="true"></span><input id="author"  placeholder="选择或输入名字" autocomplete="off"><button type="button" id="authorToggle" aria-label="展开分享者选项" aria-expanded="false" aria-controls="authorPanel">⌄</button><div id="authorPanel" inert><div id="authorNames"></div></div></div><label for="folderToggle">所在文件夹</label><div class="folder-field"><input type="hidden" id="folderChoice"><button type="button" id="folderToggle" aria-controls="folderPanel" aria-expanded="false"></button><div id="folderPanel" inert><div id="folderOptions"></div></div></div><label class="file-field" for="file">作品文件 · 任意格式<span class="duck-pick"><span class="duck-pick-button"><span class="pixel-label"><span>选</span><span>择</span><span>文</span><span>件</span></span></span><span id="pickName" aria-live="polite">未选择文件</span><input id="file" type="file"></span></label><p id="msg"></p><button type="button" onclick="dlg.close()">取消</button> <button class="dark" id="save">保存作品</button></form></dialog>
+<dialog id="keyModal"><form id="keyForm"><h2>协作编辑</h2><label>编辑口令<input id="secret" type="password" required></label><button type="button" onclick="keyModal.close()">取消</button> <button class="dark">继续</button></form></dialog>
+<script>
+let items=[],editing,folder='',generation=0;
+async function refresh(){
+ const seq=++generation;
+ try{const r=await fetch('/api/catalog',{cache:'no-store'});if(!r.ok)throw Error();
+ const fresh=await r.json();if(seq!==generation)return;
+ items=fresh;if(folder&&!items.some(x=>x.id===folder))folder='';render();syncState.textContent='云端共享';
+ }catch{syncState.textContent='连接中断 · 重试中';setTimeout(refresh,4000)}
+}
+const feed=new EventSource('/api/events');feed.onmessage=refresh;feed.onerror=()=>syncState.textContent='正在重连…';refresh();
+function getKey(){
+ if(sessionStorage.editKey)return Promise.resolve(sessionStorage.editKey);
+ return new Promise(resolve=>{let value='';secret.value='';
+ keyModal.onclose=()=>resolve(value);keyForm.onsubmit=e=>{e.preventDefault();value=secret.value;keyModal.close()};keyModal.showModal();secret.focus()})
+}
+async function change(values,file){
+ const key=await getKey();if(!key)return false;
+ const form=new FormData();for(const [k,v] of Object.entries(values))form.append(k,v);
+ if(file)form.append('file',file);
+ try{const r=await fetch('/api/change',{method:'POST',body:form,headers:{Authorization:'Bearer '+encodeURIComponent(key)}});
+ if(!r.ok){if(r.status===403)sessionStorage.removeItem('editKey');const err=await r.json().catch(()=>({}));throw Error(err.error||'保存失败，请检查连接或文件大小')}
+ sessionStorage.editKey=key;await refresh();return true
+ }catch(e){alert(e.message);return false}
+}function navigate(id){folder=id;query.value='';render();if(!matchMedia('(prefers-reduced-motion: reduce)').matches)rows.animate([{opacity:0,transform:'translateY(9px) scale(.985)'},{opacity:1,transform:'scale(1.008)'},{transform:'none'}],{duration:300})}
+backFolder.onclick=()=>navigate('');
+let folderTarget;
+function nameFolder(x){folderTarget=x;folderHeading.textContent=x?'重命名文件夹':'新建文件夹';folderName.value=x?.title||'';folderModal.showModal();folderName.select()}
+folderForm.onsubmit=async e=>{e.preventDefault();const button=folderForm.querySelector('button.dark');button.disabled=true;
+try{if(await change({id:folderTarget?.id||crypto.randomUUID(),version:folderTarget?.version||0,title:folderName.value,kind:'folder'}))folderModal.close()}finally{button.disabled=false}};newFolder.onclick=()=>nameFolder();
+function render(){
+ rows.replaceChildren();const current=items.find(x=>x.id===folder);
+ backFolder.hidden=!folder;newFolder.hidden=!!folder;
+ document.querySelector('.bar h2').firstChild.textContent=current?current.title+' ':'全部分享 ';
+ const matches=items.filter(x=>(x.folder||'')===folder&&(x.title+(x.author||'')).toLowerCase().includes(query.value.toLowerCase()));
+ count.textContent=matches.length;
+ for(const x of matches){const isFolder=x.kind==='folder';const row=document.createElement('div');row.className='row';
+ row.innerHTML='<i></i><b><button class="link"></button><small></small></b><span></span><button>编辑</button><button class="remove">删除</button>';
+ const [open,edit,del]=row.querySelectorAll('button');
+ if(isFolder){row.firstChild.className='mascot';row.firstChild.setAttribute('aria-hidden','true')}else row.firstChild.textContent='▤';row.onclick=e=>{if(!e.target.closest('button'))open.click()};open.textContent=x.title;open.onclick=()=>isFolder?navigate(x.id):view(x);
+ row.querySelector('small').textContent=x.updated?'上次更新　'+new Date(x.updated).toLocaleString('zh-CN',{hour12:false}):'上次更新　暂无记录';
+ row.querySelector('span').textContent=isFolder?items.filter(y=>y.folder===x.id).length+' 件作品':(x.author||'未署名');if(!isFolder){const by=row.querySelector('span');by.classList.add('author-name');by.prepend(authorDuck(x.author))}
+ edit.onclick=()=>isFolder?nameFolder(x):editor(x);
+ del.onclick=()=>{
+ deleteHeading.textContent=isFolder?'删除文件夹':'删除作品';
+ deleteText.textContent='确定删除「'+x.title+'」？'+(isFolder?'其中的作品将移回分享目录。':'');
+ deleteYes.onclick=async()=>{deleteYes.disabled=true;try{if(await change({op:'delete',id:x.id,version:x.version}))deleteModal.close()}finally{deleteYes.disabled=false}}; deleteModal.showModal()
+};rows.append(row)}
+ if(!matches.length)rows.textContent=query.value?'没有匹配的作品。':'文件夹为空，点击「添加作品」放入第一份分享。';
+}let activeURL;
+const viewer=document.createElement('dialog');
+viewer.id='viewer';viewer.innerHTML='<section></section><button autofocus aria-label="关闭预览">关闭 · Esc</button>';
+document.body.append(viewer);
+for(const modal of [dlg,viewer,folderModal,deleteModal]){
+ const close=modal.close.bind(modal);
+ modal.close=()=>{if(!modal.open||modal.classList.contains('closing'))return;
+ if(matchMedia('(prefers-reduced-motion: reduce)').matches){close();return}
+ modal.classList.add('closing');setTimeout(()=>{modal.classList.remove('closing');close()},170)};
+ modal.addEventListener('cancel',e=>{e.preventDefault();modal.close()})
+}
+const stage=viewer.firstChild;
+viewer.lastChild.onclick=()=>viewer.close();
+viewer.onclose=()=>{stage.replaceChildren();URL.revokeObjectURL(activeURL)};
+window.addEventListener('message',e=>{if(viewer.open&&e.source===stage.querySelector('iframe')?.contentWindow&&e.data==='folio-close')viewer.close()});
+async function view(x){
+ let bytes;try{const r=await fetch("/api/file/"+encodeURIComponent(x.id));if(!r.ok)throw Error();bytes=new Uint8Array(await r.arrayBuffer())}catch{alert("作品读取失败，请重试");return}if(viewer.open)return;
+ const type=/\.pdf$/i.test(x.name)?'application/pdf':x.type;
+ activeURL=URL.createObjectURL(new Blob([bytes],{type}));
+ let el;
+ if(type.startsWith('image/'))el=document.createElement('img');
+ else if(/^(video|audio)\//.test(type)){el=document.createElement(type.split('/')[0]);el.controls=true}
+ else if(type==='application/pdf'){el=document.createElement('object');el.type=type;el.data=activeURL+'#view=Fit';el.innerHTML='<span>浏览器无法预览此 PDF，请下载原件查看。</span>'}
+ else if(type==='text/html'){
+ el=document.createElement('iframe');el.setAttribute('sandbox','allow-scripts allow-downloads');el.allowFullscreen=true;
+ const doc=new DOMParser().parseFromString(new TextDecoder().decode(bytes),'text/html');
+ const key=doc.createElement('script');key.textContent="addEventListener('keydown',e=>{if(e.key==='Escape')parent.postMessage('folio-close','*')},true)";doc.head.prepend(key);
+ el.srcdoc='<!doctype html>'+doc.documentElement.outerHTML;
+ }else if(type.startsWith('text/')){el=document.createElement('pre');el.textContent=new TextDecoder().decode(bytes)}
+ else{el=document.createElement('p');el.textContent='请下载原件，使用对应应用打开。'}
+ if(el.matches('img,video,audio'))el.src=activeURL;
+ stage.replaceChildren(el);
+ if(el.matches('img')){
+   const box=document.createElement('div');box.className='picture-area';
+   stage.replaceChildren(box);box.append(el);
+   const bar=document.createElement('div');bar.className='picture-tools';
+   bar.innerHTML='<button aria-label="缩小">−</button><output></output><button aria-label="放大">＋</button><button>适应窗口</button>';
+   stage.append(bar);
+   const [minus,plus,fit]=bar.querySelectorAll('button');
+   let zoom=1;
+   function resize(){
+     if(!el.naturalWidth||!box.clientHeight)return;
+     const base=Math.min(1,box.clientWidth/el.naturalWidth,box.clientHeight/el.naturalHeight);
+     el.style.width=Math.max(1,Math.round(el.naturalWidth*base*zoom))+'px';
+     bar.querySelector('output').textContent=Math.round(base*zoom*100)+'%';
+     minus.disabled=zoom<=0.1;plus.disabled=zoom>=8;
+   }
+   function change(factor){zoom=Math.min(8,Math.max(0.1,zoom*factor));resize()}
+   minus.onclick=()=>change(0.8);plus.onclick=()=>change(1.25);fit.onclick=()=>{zoom=1;resize()};
+   box.onwheel=e=>{if(e.ctrlKey)return;e.preventDefault();change(e.deltaY>0?0.8:1.25)};
+   el.onload=resize;const observer=new ResizeObserver(resize);observer.observe(box);
+   viewer.addEventListener('close',()=>observer.disconnect(),{once:true});
+ }
+ if(type==='application/pdf'||el.matches('p')){const a=document.createElement('a');a.href=activeURL;a.download=x.name;a.textContent='下载原件';stage.append(a)}
+ viewer.showModal();viewer.lastChild.focus()
+}function setAuthorOpen(open){
+ authorToggle.setAttribute('aria-expanded',String(open));authorToggle.setAttribute('aria-label',open?'收起分享者选项':'展开分享者选项');
+ authorPanel.inert=!open;authorPanel.classList.toggle('expanded',open);
+}
+function authorDuck(name){
+ const faceNames=['开心','生气','沮丧','流泪'];
+ const presets=['置物架','鸭子','猪','中文'];
+ const known=presets.indexOf(name);
+ let hash=0;for(const char of name||'')hash=(Math.imul(hash,31)+char.codePointAt(0))>>>0;
+ const mood=faceNames[known>=0?known:hash%4];
+ const svg=document.querySelector('#brandDuck svg').cloneNode(true);
+ svg.classList.add('author-duck');svg.dataset.mood=mood;
+ for(const face of svg.querySelectorAll('[data-face]'))if(face.dataset.face!==mood)face.remove();
+ return svg
+}
+function syncAuthorDuck(){document.querySelector('.duck-name').replaceChildren(authorDuck(author.value.trim()))}
+author.addEventListener('input',syncAuthorDuck);
+function buildAuthors(){
+ const names=new Set(['置物架','鸭子','猪',...items.map(item=>item.author).filter(Boolean)]);
+ authorNames.replaceChildren(...Array.from(names,name=>{
+ const button=document.createElement('button');button.type='button';button.textContent=name;button.prepend(authorDuck(name));
+ button.onclick=()=>{author.value=name;syncAuthorDuck();setAuthorOpen(false);author.focus()};return button}));
+}
+authorToggle.onclick=()=>setAuthorOpen(authorPanel.inert);
+author.onkeydown=e=>{if(e.key==='ArrowDown'){e.preventDefault();setAuthorOpen(true);authorNames.firstChild?.focus()}};
+dlg.addEventListener('keydown',e=>{if(e.key==='Escape'&&!authorPanel.inert){e.preventDefault();e.stopPropagation();setAuthorOpen(false);author.focus()}});
+dlg.addEventListener('focusin',e=>{if(!e.target.closest('.author-field'))setAuthorOpen(false)});
+function showFolders(open){folderPanel.inert=!open;folderToggle.setAttribute('aria-expanded',String(open))}
+function setupFolders(selected){
+ showFolders(false);folderOptions.replaceChildren();
+ const list=[{id:'',title:'分享目录'},...items.filter(y=>y.kind==='folder')];
+ function choose(entry){folderChoice.value=entry.id;folderToggle.textContent=entry.title;showFolders(false)}
+ choose(list.find(y=>y.id===selected)||list[0]);
+ for(const entry of list){const btn=document.createElement('button');btn.type='button';btn.textContent=entry.title;btn.onclick=()=>{choose(entry);folderToggle.focus()};folderOptions.append(btn)}
+}
+folderToggle.onclick=()=>showFolders(folderPanel.inert);
+dlg.addEventListener('focusin',e=>{if(!e.target.closest('.folder-field'))showFolders(false)});
+dlg.addEventListener('keydown',e=>{if(e.key==='Escape'&&!folderPanel.inert){e.preventDefault();showFolders(false);folderToggle.focus()}});
+const pixelLabel=document.querySelector('.pixel-label');
+function popPickerText(){
+ if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ pixelLabel.classList.remove('play');
+ void pixelLabel.offsetWidth;
+ pixelLabel.classList.add('play');
+}
+file.closest('.duck-pick').addEventListener('pointerenter',popPickerText);
+file.addEventListener('focus',popPickerText);
+function editor(x){editing=x;form.reset();pickName.textContent=x?.name||"未选择文件";setAuthorOpen(false);buildAuthors();setupFolders(x?.folder||folder);dt.textContent=x?'编辑作品':'添加作品';titleBox.value=x?.title||'';author.value=x?.author||'';syncAuthorDuck();file.required=!x;msg.textContent='保存后，所有访问者的目录会自动更新。';dlg.showModal();popPickerText()}
+file.onchange=()=>{pickName.textContent=file.files[0]?.name||editing?.name||"未选择文件";if(!titleBox.value)titleBox.value=file.files[0]?.name||''};
+form.onsubmit=async e=>{e.preventDefault();save.disabled=true;msg.textContent='正在保存到云端…';try{
+ if(await change({id:editing?.id||crypto.randomUUID(),version:editing?.version||0,title:titleBox.value,folder:folderChoice.value,author:author.value},file.files[0]))dlg.close()
+ }finally{save.disabled=false;msg.textContent='保存后，所有访问者的目录会自动更新。'}};pond.onclick=()=>{if(!matchMedia('(prefers-reduced-motion: reduce)').matches)pond.animate([{transform:'translateY(0)'},{transform:'translateY(-18px) rotate(-9deg)',offset:.4},{transform:'scale(1.08,.92)',offset:.78},{transform:'none'}],{duration:540})};
+function startDuckWater(){
+ document.querySelector('#duckWater')?.remove();
+ const water=document.createElement('canvas');water.id='duckWater';water.setAttribute('aria-hidden','true');document.body.prepend(water);
+ const ctx=water.getContext('2d');if(!ctx)return;
+ const duck=new Image(),motion=matchMedia('(prefers-reduced-motion: reduce)');
+ let width,height,frame=0,last=0,clock=0,trail=0;const waves=[];
+ function size(){width=innerWidth;height=innerHeight;const ratio=Math.min(devicePixelRatio||1,1.5);water.width=Math.round(width*ratio);water.height=Math.round(height*ratio);ctx.setTransform(ratio,0,0,ratio,0,0);schedule()}
+ function schedule(){if(!frame&&!document.hidden)frame=requestAnimationFrame(draw)}
+ const flock=new Map(),path=[];
+ let pointer=null;
+ function drawFlock(dt,now){
+   while(path.length&&now-path[0].t>1000)path.shift();
+   const step=112,cols=Math.ceil(width/step)+2,rows=Math.ceil(height/step)+2;
+   for(let j=0;j<rows;j++)for(let i=0;i<cols;i++){
+     const phase=(i*7+j*11)*.79;
+     const x=(i*step+j%2*48+clock*9)%(cols*step)-step;
+     const y=(j*step+clock*3.3)%(rows*step)-step+Math.sin(clock+phase)*5;
+     if(x< -55||x>width+55||y< -55||y>height+55)continue;
+     const key=j*65536+i;
+     let bird=flock.get(key);
+     if(!bird){bird={dx:0,dy:0,tilt:0,glow:0};flock.set(key,bird)}
+     let tx=0,ty=0,turn=0,total=0,nearGlow=0;
+     for(let n=path.length-1;n>=0;n--){
+       const s=path[n],rx=x-s.x,ry=y-s.y;
+       if(Math.abs(rx)>280||Math.abs(ry)>280)continue;
+       const along=rx*s.ux+ry*s.uy,across=ry*s.ux-rx*s.uy;
+       const age=(now-s.t-Math.min(180,Math.max(0,90-along*.65)))/1000;
+       if(age<=0||age>=.8)continue;
+       const weight=Math.exp(-(along*along+across*across)/29000)*Math.sin(Math.PI*age/.8)**2*s.speed;
+       const distance=Math.hypot(rx,ry);
+       const proximity=Math.max(0,1-distance/152);
+       const softness=proximity*proximity*(3-2*proximity);
+       nearGlow=Math.max(nearGlow,softness*Math.sin(Math.PI*Math.min(1,age/.64))**2*Math.sqrt(s.speed));
+       const bend=.86*Math.sin(age*5.3+across/152);
+       tx+=(s.ux-s.uy*bend)*weight;ty+=(s.uy+s.ux*bend)*weight;
+       turn+=bend*weight;total+=weight
+     }
+     bird.glow+=(nearGlow-bird.glow)*(-Math.expm1(-dt/(nearGlow>bird.glow?65:175)));
+     const scale=48/(1+total),follow=-Math.expm1(-dt/(115+j%3*32));
+     bird.dx+=(tx*scale-bird.dx)*follow;bird.dy+=(ty*scale-bird.dy)*follow;
+     bird.tilt+=(turn*scale*.007-bird.tilt)*follow;
+     let crest=0;
+     for(const pulse of waves){
+       const dx=x+bird.dx-pulse.x,dy=y+bird.dy-pulse.y;
+       const distance=Math.hypot(dx,dy);
+       const heading=Math.atan2(dy,dx)-pulse.heading;
+       // The bend grows with distance, so neighboring ducks share the same flowing front.
+       const bend=.68*Math.sin(distance/190+pulse.twist);
+       const leading=Math.cos(heading+bend);
+       const lobes=Math.sin(2*heading-bend+pulse.twist);
+       const speed=540*(1+.36*leading+.16*lobes);
+       const travel=(now-pulse.t)/1000-distance/speed;
+       if(travel>0&&travel<.76){const t=travel/.76;crest+=Math.sin(Math.PI*t)**2*Math.sin(2*Math.PI*t+.35)*Math.exp(-.7*t)*(.86+.14*leading)}
+     }
+     const depth=(1+Math.sin(x/260+y/210-clock*.25))*.5;
+     ctx.save();ctx.translate(x+bird.dx,y+bird.dy-Math.tanh(crest)*15);ctx.rotate(-.14+Math.sin(clock*.8+phase)*.055+bird.tilt+crest*.09);
+     ctx.globalAlpha=Math.min(.98,.065+depth*.095+bird.glow*.62+Math.max(0,crest)*1.65);
+     const w=39+((i*7+j*11)%4)*6+depth*7;ctx.drawImage(duck,-w/2,-w*.4,w,w*.8);
+     ctx.fillStyle='#aadad5';for(let k=0;k<4;k++){ctx.globalAlpha=(.09+depth*.08)*(1-k/4);ctx.fillRect(-w*.53-k*6,7+Math.sin(clock+phase+k)*2,3-k*.45,2)}
+     ctx.restore()
+   }
+ } function draw(now){
+ frame=0;const dt=last?Math.min(now-last,80):0;last=now;if(!motion.matches)clock+=dt*.001;
+ ctx.clearRect(0,0,width,height);
+ for(let k=waves.length-1;k>=0;k--){
+ if(now-waves[k].t>=waves[k].life*1000)waves.splice(k,1);
+ }
+ drawFlock(dt,now);
+ if(!motion.matches)schedule()
+ }
+ function disturb(e,hover){
+ if(motion.matches||!duck.naturalWidth||dlg.open||viewer.open||folderModal.open||deleteModal.open)return;
+ const x=e.clientX,y=e.clientY,now=performance.now();
+ if(!hover){waves.push({x,y,t:now,life:7,heading:Math.random()*2*Math.PI,twist:Math.random()*2*Math.PI});if(waves.length>8)waves.shift()}
+ else if(pointer&&now-pointer.t<250){
+   const dx=x-pointer.x,dy=y-pointer.y,length=Math.hypot(dx,dy),elapsed=now-pointer.t;
+   if(elapsed<18||length<3)return;
+   const steps=Math.min(6,Math.ceil(length/54));
+   for(let k=1;k<=steps;k++)path.push({x:pointer.x+dx*k/steps,y:pointer.y+dy*k/steps,ux:dx/length,uy:dy/length,t:now,speed:Math.min(1,length/Math.max(1,elapsed))});
+   if(path.length>48)path.splice(0,path.length-48)
+ }
+ pointer={x,y,t:now}; schedule()
+ }
+ window.addEventListener('pointerdown',e=>disturb(e,false),{passive:true});
+ window.addEventListener('pointermove',e=>disturb(e,true),{passive:true});
+ document.documentElement.addEventListener('pointerleave',()=>{pointer=null}); duck.onload=()=>{size();window.addEventListener('resize',size);motion.addEventListener('change',()=>{waves.length=0;path.length=0;flock.clear();schedule()});document.addEventListener('visibilitychange',()=>{last=0;schedule()})};
+ duck.src=getComputedStyle(document.documentElement).getPropertyValue('--duck').trim().slice(4,-1).replace(/^["']|["']$/g,'');
+}
+function startBrandDuck(){
+ const button=document.getElementById('brandDuck'),faces=Array.from(button.querySelectorAll('[data-face]'));
+ const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+ let index=0,timer;
+ function show(animate){
+   faces.forEach((face,i)=>face.classList.toggle('visible',i===index));
+   button.title='小鸭 · '+faces[index].dataset.face;button.setAttribute('aria-label',button.title);
+   if(animate&&!reduced.matches)button.firstElementChild.animate([{transform:'translateY(1px) scale(1.04,.96)'},{transform:'translateY(-2px) scale(.98,1.04)'},{transform:'none'}],{duration:260})
+ }
+ function schedule(){clearTimeout(timer);if(!document.hidden)timer=setTimeout(next,3000)}
+ function next(){index=(index+1)%faces.length;show(true);schedule()}
+ document.addEventListener('visibilitychange',schedule);reduced.addEventListener('change',schedule);
+ show(false);schedule()
+}
+startBrandDuck();startDuckWater();
+add.onclick=()=>editor();query.oninput=render;render();
+</script></html>
+
+
+
+
+
+
+
+
+
+
